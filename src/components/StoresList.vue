@@ -15,6 +15,7 @@
             console.error(message)
         }
     })
+
 </script>
 
 <template>
@@ -23,7 +24,7 @@
 
         <ul>
             <li v-for="store in stores" :key="store.id">
-                <RouterLink :to="'/stores/' + store.id + '/products'" :store-name="store.name">
+                <RouterLink :to="{ path: '/stores/' + store.id + '/products', query: { storeName: store.name } }">
                     {{ store.name }}
                 </RouterLink>
             </li>

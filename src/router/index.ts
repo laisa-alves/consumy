@@ -30,7 +30,8 @@ const router = createRouter({
     {
       path: '/stores/:storeId/products',
       name: 'products',
-      component: () => import('../components/ProductsList.vue')
+      component: () => import('../components/ProductsList.vue'),
+      props: (route) => ({storeName: route.query.storeName})
     },
 
     {

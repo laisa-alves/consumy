@@ -14,6 +14,7 @@
             const productResponse = await fetch(`http://127.0.0.1:3000/stores/${storeId}/products.json`)
             const productData = await productResponse.json()
             products.value = productData
+            storeName.value = router.currentRoute.value.query.storeName
         } catch (error) {
             console.log(error.message)
         }
