@@ -8,11 +8,12 @@
 </script>
 
 <template>
-    <h1>Meu primeiro componente</h1>
     <div>
-        Dizendo olá, para variar: {{ message }}
+        <h1>Meu primeiro componente</h1>
+        <p>Dizendo olá, para variar: {{ message }}</p>
+        <input v-model="message" />
+        <div><button @click="limpar">apaga tudo!</button></div>
     </div>
-    <input v-model="message" />
+
     
-    <div><button @click="limpar">apaga tudo!</button></div>
 </template>
