@@ -1,0 +1,33 @@
+<script setup lang="ts">
+    import { useRouter } from 'vue-router';
+    import {ref } from 'vue'
+    import { auth } from '../auth.ts'
+
+    const router = useRouter()
+    const email = defineModel('email')
+    const password = defineModel('password')
+    const awaiting = ref(false)
+
+    function onSubmit(form) {
+        awaiting.value = true
+        auth.signIn(email.value, password.value, () => { 
+            awaiting.value = false
+            router.push('/')
+        })
+    }
+</script>
+
+<template>
+    <div>
+        <h1>Sign In</h1>
+        <form @submit.prevent="onSubmit()">
+            <label>E-Mail:</label>
+            <input type="email" v-model="email"><br />
+
+            <label>Senha:</label>
+            <input type="password" v-model="password"><br />
+
+            <button type="submit" v-show="!awaiting">Sign In</button>
+        </form>
+    </div>
+</template>
