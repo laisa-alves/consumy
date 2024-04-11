@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
-import { auth } from '../auth.ts'
+import { auth } from '../auth'
 
 const router = useRouter()
-const email = defineModel('email')
-const password = defineModel('password')
+const email = defineModel<string>('email')
+const password = defineModel<string>('password')
 const awaiting = ref(false)
 
-function onSubmit(form) {
+function onSubmit() {
   awaiting.value = true
   auth.signIn(
-    email.value,
-    password.value,
+    email.value || '',
+    password.value || '',
     () => {
       awaiting.value = false
       router.push('/')
@@ -28,7 +28,7 @@ function onSubmit(form) {
 <template>
   <div>
     <h1>Sign In</h1>
-    <form @submit.prevent="onSubmit()">
+    <form @submit.prevent="onSubmit">
       <label>E-Mail:</label>
       <input type="email" v-model="email" /><br />
 

@@ -17,7 +17,7 @@ const signOut = function () {
     <h1>Delivery: Welcome</h1>
 
     <template v-if="currentUser">
-      <h3>Hi, {{ currentUser.email }}</h3>
+      <h3>Hi, {{ currentUser && currentUser.email }}</h3>
       <nav>
         <a @click="signOut">Sign Out</a>
       </nav>
