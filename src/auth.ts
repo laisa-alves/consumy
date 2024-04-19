@@ -45,7 +45,7 @@ async function signIn(
     }
   }
 
-  const response = await fetch('http://127.0.0.1:3000/sign_in', {
+  await fetch(import.meta.env.VITE_API + 'sign_in', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
