@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
-import { auth } from '../auth'
+import { Auth } from '../auth'
 
 const router = useRouter()
 const email = defineModel<string>('email')
 const password = defineModel<string>('password')
 const awaiting = ref(false)
+const remember = defineModel<boolean>('remember', { default: true })
 
-function onSubmit() {
+function onSubmit(form: Event) {
+  let auth = new Auth(remember.value)
+
   awaiting.value = true
   auth.signIn(
     email.value || '',
@@ -34,6 +37,9 @@ function onSubmit() {
 
       <label>Senha:</label>
       <input type="password" v-model="password" /><br />
+
+      <label>Remember me:</label>
+      <input type="checkbox" v-model="remember" /><br />
 
       <button type="submit" v-show="!awaiting">Sign In</button>
     </form>
