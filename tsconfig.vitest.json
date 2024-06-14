@@ -7,5 +7,16 @@
 
     "lib": [],
     "types": ["node", "jsdom"]
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.js",
+    "src/**/*.tsx",
+    "src/**/*.jsx",
+    "src/**/*.json",
+    "src/**/*.html",
+    "formkit.config.ts",
+    "formkit.theme.ts"
+  ]
 }
