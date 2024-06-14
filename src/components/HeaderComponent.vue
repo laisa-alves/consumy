@@ -13,9 +13,9 @@ const { toggleSidebar } = useSidebarStore()
       class="flex flex-grow items-center justify-between gap-6 py-4 px-4 shadow-sm md:px-6 2xl:px-11"
     >
       <!-- Logo -->
-      <div>
+      <a href="/">
         <img src="@/assets/image/deliverme.svg" alt="Consumy" class="h-4 w-auto" />
-      </div>
+      </a>
 
       <!-- Search bar -->
       <form action="#" method="GET" class="block pl-2">
