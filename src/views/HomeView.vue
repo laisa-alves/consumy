@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import HomeLayout from '@/layouts/HomeLayout.vue'
+import CategoriesComponent from '@/components/CategoriesComponent.vue'
+import StoresHomeComponent from '@/components/StoresHomeComponent.vue'
 </script>
 
 <template>
-  <HomeLayout />
+  <!-- Categories -->
+  <CategoriesComponent />
+
+  <!-- Stores -->
+  <StoresHomeComponent />
 </template>
