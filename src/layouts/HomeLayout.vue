@@ -19,7 +19,7 @@ import { RouterView } from 'vue-router'
       <HeaderComponent />
 
       <!-- === Content start === -->
-      <div class="py-8 px-20 h-screen">
+      <div class="mx-auto p-8 max-w-[1024px]">
         <RouterView />
       </div>
     </div>

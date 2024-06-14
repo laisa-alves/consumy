@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
   <div class="mt-10">
     <h1 class="text-2xl">Lojas</h1>
 
-    <div class="my-4 grid grid-cols-2 gap-3">
+    <div class="my-4 grid grid-cols-2 gap-4">
       <!-- Store card -->
       <div class="bg-green-50 rounded-lg hover:bg-deep-orange-50">
         <RouterLink :to="{ name: 'store' }" class="text-sm font-semibold leading-6">
