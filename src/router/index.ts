@@ -5,6 +5,7 @@ import HomeLayout from '@/layouts/HomeLayout.vue'
 import HomeView from '../views/HomeView.vue'
 import StoreView from '../views/StoreView.vue'
 import SignView from '../views/SignView.vue'
+import PaymentView from '../views/PaymentView.vue'
 
 
 const router = createRouter({
@@ -36,6 +37,11 @@ const router = createRouter({
       path: '/signup',
       name: 'signup',
       component: SignView
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: PaymentView
     },
     {
       path: '/welcome',

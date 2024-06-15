@@ -2,6 +2,10 @@
 import { useSidebarStore } from '@/stores/sidebar'
 import { onClickOutside } from '@vueuse/core'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+
+const router = useRouter()
 
 // Responsive sidebar
 const target = ref(null)
@@ -10,6 +14,11 @@ const sidebarStore = useSidebarStore()
 onClickOutside(target, () => {
   sidebarStore.isSidebarOpen = false
 })
+
+const proceedToPayment = () => {
+  sidebarStore.isSidebarOpen = false
+  router.push('/payment')
+}
 </script>
 
 <template>
@@ -67,7 +76,7 @@ onClickOutside(target, () => {
       </div>
       <!-- Button -->
       <div class="mt-4">
-        <button class="w-full bg-black text-white py-2 rounded-md">Finalizar compra</button>
+        <button @click="proceedToPayment" class="w-full bg-black text-white py-2 rounded-md">Finalizar compra</button>
       </div>
     </div>
   </aside>
