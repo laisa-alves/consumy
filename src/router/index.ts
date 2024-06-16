@@ -6,6 +6,7 @@ import HomeView from '../views/HomeView.vue'
 import StoreView from '../views/StoreView.vue'
 import SignView from '../views/SignView.vue'
 import PaymentView from '../views/PaymentView.vue'
+import OrdersView from '@/views/OrdersView.vue'
 
 
 const router = createRouter({
@@ -25,6 +26,19 @@ const router = createRouter({
           path: '/store',
           name: 'store',
           component: StoreView
+        },
+        {
+          path: '/orders',
+          name: 'orders',
+          component: OrdersView,
+          children: [
+            {
+              path: ':id/view',
+              name: 'showOrder',
+              component: OrdersView,
+              props: true
+            }
+          ]
         }
       ]
     },
