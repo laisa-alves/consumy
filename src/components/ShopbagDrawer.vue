@@ -4,7 +4,6 @@ import { onClickOutside } from '@vueuse/core'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-
 const router = useRouter()
 
 // Responsive sidebar
@@ -23,7 +22,7 @@ const proceedToPayment = () => {
 
 <template>
   <aside
-    class="absolute right-0 top-0 z-10 flex h-screen w-96 flex-col overflow-y-hidden bg-red-50 drop-shadow-sm duration-300 ease-linear"
+    class="fixed right-0 top-0 z-10 flex h-screen w-96 flex-col overflow-y-hidden bg-white drop-shadow-md duration-300 ease-linear"
     :class="{
       'translate-x-0': sidebarStore.isSidebarOpen,
       'translate-x-full': !sidebarStore.isSidebarOpen
@@ -65,10 +64,8 @@ const proceedToPayment = () => {
       </div>
     </div>
 
-    
-
     <!-- Footer -->
-    <div class="fixed w-full bottom-0 right-0 left-0 py-1 px-6 bg-white">
+    <div class="fixed w-full bottom-0 right-0 left-0 py-8 px-6 bg-white">
       <!-- Total -->
       <div class="flex justify-between font-medium">
         <p>Total</p>
@@ -76,7 +73,9 @@ const proceedToPayment = () => {
       </div>
       <!-- Button -->
       <div class="mt-4">
-        <button @click="proceedToPayment" class="w-full bg-black text-white py-2 rounded-md">Finalizar compra</button>
+        <button @click="proceedToPayment" class="w-full bg-black text-white py-2 rounded-md">
+          Finalizar compra
+        </button>
       </div>
     </div>
   </aside>

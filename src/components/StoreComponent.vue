@@ -152,7 +152,7 @@ const toggleModal = () => {
       <div class="flex flex-wrap gap-8 max-w-3xl">
         <template v-for="product in filteredProducts(category.id)" :key="product.id">
           <button @click="toggleModal">
-            <div class="flex flex-col bg-red-50 w-[160px]">
+            <div class="flex flex-col w-[160px]">
               <img
                 src="https://via.placeholder.com/150"
                 alt="Nome do produto"

@@ -72,16 +72,16 @@ const categories = [
 </script>
 
 <template>
-  <div class="block box-border bg-slate-100">
-    <div class="overflow-visible bg-red-50">
-      <div class="relative w-full h-full flex box-content transform bg-yellow-50 overflow-auto">
+  <div class="block box-border">
+    <div class="overflow-visible">
+      <div class="relative w-full h-full flex box-content transform overflow-auto">
         <template v-for="category in categories" :key="category.id">
           <div
-            class="mr-3 w-auto flex-shrink-0 h-full relative transform box-border block bg-green-50"
+            class="mr-3 w-auto flex-shrink-0 h-full relative transform box-border block"
           >
             <a
               href="#"
-              class="flex flex-col items-center w-fit cursor-pointer p-3 mr-4 mb-2 bg-white rounded-lg transition-all"
+              class="flex flex-col items-center w-fit cursor-pointer p-3 mr-4 mb-2 bg-orange-50 rounded-lg transition-all"
             >
               <div class="w-[60px] h-[40px] block relative box-border">
                 <span
@@ -94,7 +94,7 @@ const categories = [
                   />
                 </span>
               </div>
-              <span class="flex overflow-hidden mt-1">{{ category.name }}</span>
+              <span class="flex overflow-hidden mt-1 font-medium">{{ category.name }}</span>
             </a>
           </div>
         </template>
